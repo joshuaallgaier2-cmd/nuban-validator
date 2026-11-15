@@ -49,3 +49,12 @@ Open an issue with the account number format, bank code, what you expected and w
 ## Code of conduct
 
 By taking part you agree to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Releases
+
+Releases are published to npm from GitHub Actions when a version tag is pushed. Only the maintainer cuts releases.
+
+```bash
+npm version patch   # or minor, major
+git push --follow-tags
+```
