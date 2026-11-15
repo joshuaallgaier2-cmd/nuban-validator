@@ -1,0 +1,57 @@
+{
+  "name": "@kolapoimam/nuban",
+  "version": "0.1.0",
+  "description": "Validate Nigerian bank account numbers (NUBAN) with the CBN check digit algorithm",
+  "keywords": [
+    "nuban",
+    "nigeria",
+    "bank",
+    "account-number",
+    "validation",
+    "cbn",
+    "fintech"
+  ],
+  "homepage": "https://github.com/kolapoimam/nuban-validator#readme",
+  "bugs": "https://github.com/kolapoimam/nuban-validator/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kolapoimam/nuban-validator.git"
+  },
+  "license": "MIT",
+  "author": "Kolapo Imam (https://kolapo.ng)",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  }
+}
